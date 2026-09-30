@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Rizha Cahyadi Akbar - Layanan & Portofolio Resmi" />
+    <meta property="og:description" content="Konsultasi & Pendaftaran XL PRIORITAS, XL SATU Fiber, Reservasi RedDoorz, dan Portofolio Profesional." />
+    <meta property="og:url" content="https://rizha.vercel.app/" />
+    <meta property="og:type" content="website" />
+    
+    <title>Katalog & Portofolio - Rizha Cahyadi Akbar</title>
+    
+    <style>
+        :root {
+            --bg-color: #0a0e17;
+            --card-bg: rgba(30, 41, 59, 0.75);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --accent-wa: #25d366;
+            --accent-wa-hover: #1da851;
+            --accent-shopee: #ee4d2d;
+            --accent-tiktok: #222222;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --price-color: #38bdf8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; padding: 20px; position: relative; overflow-x: hidden; }
+
+        /* Background Animasi */
+        .brand-bg-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; overflow: hidden; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.35; animation: floatOrb 12s infinite alternate ease-in-out; }
+        .orb-xl { width: 380px; height: 380px; background: #00a8ff; top: -50px; left: -50px; }
+        .orb-reddoorz { width: 420px; height: 420px; background: #e50914; bottom: -100px; right: -50px; animation-delay: -3s; }
+        .orb-kremlin { width: 320px; height: 320px; background: #eab308; top: 35%; right: 10%; animation-delay: -6s; }
+        .orb-walkind { width: 350px; height: 350px; background: #64748b; bottom: 20%; left: 10%; animation-delay: -9s; }
+        .brand-watermark-grid { position: absolute; width: 100%; height: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; align-content: space-around; opacity: 0.035; font-weight: 900; font-size: 2.8rem; letter-spacing: 4px; user-select: none; text-transform: uppercase; }
+        .brand-watermark-grid span { transform: rotate(-12deg); margin: 25px; }
+
+        @keyframes floatOrb { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(40px, 50px) scale(1.1); } 100% { transform: translate(-30px, 30px) scale(0.95); } }
+
+        /* Container & Header */
+        .container { max-width: 950px; margin: 0 auto; padding-bottom: 80px; }
+        header { text-align: center; padding: 35px 20px; background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 16px; border: 1px solid var(--card-border); margin-bottom: 30px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        header h1 { font-size: 2.2rem; margin-bottom: 6px; }
+        header h2 { font-size: 1.05rem; color: var(--price-color); font-weight: 600; margin-bottom: 8px; }
+        header p.location { color: var(--text-muted); font-size: 0.9rem; }
+
+        .badges { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+        .badge { background: rgba(56, 189, 248, 0.1); color: var(--price-color); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; border: 1px solid rgba(56, 189, 248, 0.3); font-weight: 600; }
+        .header-links { display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .btn-outline { border: 1px solid var(--text-muted); color: var(--text-main); text-decoration: none; padding: 8px 16px; border-radius: 25px; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; cursor: pointer; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--text-main); }
+        .btn-cv { background: var(--price-color); color: #000; border-color: var(--price-color); }
+        .btn-cv:hover { background: #0284c7; color: #fff; border-color: #0284c7; }
+
+        /* Grid Katalog */
+        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.25s, border-color 0.25s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--price-color); }
+        .card-header h3 { font-size: 1.25rem; margin-bottom: 4px; }
+        .price { color: var(--price-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
+        .desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px; }
+        .features { list-style: none; font-size: 0.85rem; margin-bottom: 20px; }
+        .features li { margin-bottom: 6px; }
+
+        .btn-group { display: flex; flex-direction: column; gap: 8px; }
+        .btn-action { display: flex; align-items: center; justify-content: center; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; transition: background 0.2s; cursor: pointer; border: none; }
+        .btn-primary { background: #38bdf8; color: #000; }
+        .btn-primary:hover { background: #0284c7; color: #fff; }
+        .btn-wa { background: var(--accent-wa); color: #052e16; }
+        .btn-wa:hover { background: var(--accent-wa-hover); color: #fff; }
+        .btn-shopee { background: var(--accent-shopee); color: #fff; }
+        .btn-tiktok { background: var(--accent-tiktok); color: #fff; border: 1px solid #333; }
+
+        /* ======= POPUP MODAL (LIGHTBOX) STYLES ======= */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.active { opacity:Bisa banget! Ini adalah langkah yang sangat tepat karena XL SATU (Internet Rumah) akan sangat serasi disandingkan dengan XL PRIORITAS (Internet Mobile) dalam satu portofolio jualanmu.
+
+Karena sebelumnya kita tidak bisa melanjutkan di v0 akibat limit kuota, kamu cukup **mengganti bagian daftar datanya saja** di dalam file `index.html` yang kamu buka di Notepad/TextEdit laptopmu.
+
+Langkah-langkahnya:
+1. Buka file `index.html` milikmu.
+2. Gulir ke bawah dan cari kode `const catalogData = [ ... ];` (sekitar baris ke 160-an).
+3. Hapus seluruh isi `catalogData` lama, lalu ganti dengan kode terbaru di bawah ini yang sudah berisi paket **XL SATU Fiber** beserta rincian harga dan catatan PPN:
+
+```javascript
+    const catalogData = [
+        {
+            title: "Aktivasi XL PRIORITAS",
+            price: "Mulai Rp 80.000",
+            desc: "Layanan resmi pendaftaran pascabayar XL PRIORITAS. Tersedia kuota besar hingga Unlimited 5G.",
+            fullDesc: "Daftar Harga & Paket XL PRIORITAS:<br><br>• <b>Rp 80.000</b> : 50 GB<br>• <b>Rp 100.000</b> : 80 GB<br>• <b>Rp 125.000</b> : 125 GB<br>• <b>Rp 150.000</b> : 175 GB<br>• <b>Rp 200.000</b> (Prio 5G) : Unlimited (5 Mbps)<br>• <b>Rp 300.000</b> (Prio Max 5G+) : Unlimited (5 Mbps)<br><br><i>*Catatan Paket Unlimited: Berlaku di jaringan 4G/5G. Jika pemakaian melewati batas wajar (FUP), kecepatan akan menyesuaikan menjadi 2 Mbps.</i>",
+            features: ["⚡ Mulai 50GB hingga Unlimited", "🚀 Prio 5G & 5G+ Tersedia", "🔢 Bebas pilih nomor cantik"],
+            waMessage: "Halo Rizha, saya mau konsultasi pendaftaran paket XL PRIORITAS."
+        },
+        {
+            title: "Pasang XL SATU Fiber",
+            price: "Mulai Rp 229.000 / bln",
+            desc: "Layanan internet rumah super cepat berbasis Fiber Optic resmi dari XL Axiata.",
+            fullDesc: "Daftar Harga Paket XL SATU Fiber:<br><br>• <b>Rp 229.000</b> : Kecepatan 250 Mbps<br>• <b>Rp 279.000</b> : Kecepatan 350 Mbps<br>• <b>Rp 300.000</b> : Kecepatan 400 Mbps<br><br><i>*Catatan Penting: Harga di atas belum termasuk PPN. Silakan hubungi via WhatsApp untuk cek ketersediaan jaringan (Coverage Area) di lokasi Anda.</i>",
+            features: ["🌐 Kecepatan hingga 400 Mbps", "📶 Jaringan Fiber Optic Stabil", "📝 Harga belum termasuk PPN"],
+            waMessage: "Halo Rizha, saya mau cek coverage area dan daftar internet XL SATU."
+        },
+        {
+            title: "Reservasi RedDoorz & Urbanview",
+            price: "Mulai Rp 150.000 / malam",
+            desc: "Pemesanan kamar hotel harian melalui jaringan mitra resmi RedSeller.",
+            fullDesc: "Pesan kamar lebih mudah dan murah melalui mitra resmi RedSeller.<br><br>• <b>Fasilitas Standar:</b> Kamar bersih, AC dingin, Wi-Fi gratis, TV, dan perlengkapan mandi.<br>• <b>Tipe Layanan:</b> Menerima pemesanan individu (Staycation) maupun paket rombongan (Corporate Retreat).",
+            features: ["🏨 Kamar bersih, AC & Wi-Fi", "📍 Lokasi strategis pusat kota", "👥 Menerima order rombongan"],
+            waMessage: "Halo Rizha, saya mau tanya ketersediaan kamar RedDoorz."
+        },
+        {
+            title: "Apparel Walkind & Kremlin",
+            price: "Katalog Resmi / Order",
+            desc: "Konsultasi pemesanan produk fashion streetwear & urban apparel original.",
+            fullDesc: "Dapatkan koleksi terbaru <b>Walkind Supply</b> dan <b>Kremlin Clothing</b>. Desain streetwear eksklusif dengan material premium yang nyaman dipakai harian.<br><br><i>*Silakan klik tombol Shopee atau TikTok di bawah untuk melihat katalog produk lengkap.</i>",
+            features: ["👕 Produk Original Berlisensi", "🎨 Desain Streetwear Premium", "📦 Pengiriman Cepat & Aman"],
+            waMessage: "Halo Rizha, saya ingin melihat info pemesanan produk pakaian.",
+            shopeeUrl: "[https://shopee.co.id](https://shopee.co.id)",
+            tiktokUrl: "[https://tiktok.com](https://tiktok.com)"
+        }
+    ];
